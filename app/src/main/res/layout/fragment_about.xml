@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#62B4E0"
+    android:orientation="vertical"
+    tools:context=".About">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:text="هذا التطبيق يعتمد على الذكاء الإصطناعي و هو موجه للأطفال المقبلين على التعلم أي في المرحلة الأولى. تم إنشائه من طرف بوشلاغم زكرياء مهندس في الإعلام الالي تخصص إعلام الي أساسي و ذكاء اصطناعي."
+        android:layout_gravity="top|center"
+        android:textAlignment="center"
+        android:fontFamily="@font/cairo"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+    <ImageButton
+        android:id="@+id/Github"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/github"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:scaleType="centerInside"/>
+
+        <ImageButton
+            android:id="@+id/Linkedin"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/linkedin"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+</LinearLayout>
