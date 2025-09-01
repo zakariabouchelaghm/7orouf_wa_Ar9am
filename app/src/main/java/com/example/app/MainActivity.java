@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null){
             replaceFragment(new Home());
-            binding.bottomNav.setSelectedItemId(R.id.home);
+            binding.bottomNav.setSelectedItemId(R.id.home);}
+
         binding.bottomNav.setBackground(null);
         binding.bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
-        };
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

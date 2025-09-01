@@ -28,10 +28,9 @@
             android:id="@+id/playSoundImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
             android:layout_gravity="center"
-            android:src="@drawable/baseline_spatial_audio_off_24"
-            android:tint="@color/lavender"/>
+            android:src="@drawable/listen"
+           />
     </com.google.android.material.card.MaterialCardView>
     <LinearLayout
         android:orientation="horizontal"
