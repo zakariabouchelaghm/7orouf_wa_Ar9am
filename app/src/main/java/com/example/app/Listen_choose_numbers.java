@@ -1,5 +1,6 @@
 package com.example.app;
 
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -21,6 +22,29 @@ import java.util.List;
 
 
 public class Listen_choose_numbers extends Fragment {
+    @Override
+    public void onResume() {
+        super.onResume();
+        // lock orientation when this fragment is visible
+        requireActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    public void releasePlayer(){
+        if (mp != null) {
+            try {
+                mp.reset();
+                mp.release();
+            } catch (Exception ignored) {}
+            mp = null;
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        releasePlayer();
+        requireActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+    }
     private MaterialCardView playSoundButton;
     private ImageView option1Button,option2Button,option3Button;
     private List<Question> questions;
