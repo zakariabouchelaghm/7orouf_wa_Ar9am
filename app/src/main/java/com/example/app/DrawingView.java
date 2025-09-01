@@ -53,7 +53,7 @@ public class DrawingView extends View {
         return dp * getResources().getDisplayMetrics().density;
     };
 
-    private float strokeWidth = dpToPx(70); // normal stroke width
+    private float strokeWidth = dpToPx(23); // normal stroke width
     private static final float DOT_RADIUS_DP = 3f; // dot radius in dp
     private float dotRadius = dpToPx(DOT_RADIUS_DP);
     private boolean isDrawingEnabled = false;

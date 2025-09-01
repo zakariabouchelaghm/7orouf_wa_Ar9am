@@ -17,9 +17,12 @@ public class Activities extends Fragment {
     CardView listen;
     CardView write;
     CardView learn;
+    CardView choose;
     final PopupWrite_and_listen popupFragment1= new PopupWrite_and_listen();
     final PopupFragmentLearn popupFragment2= new PopupFragmentLearn();
     final PopupFragmentListen_and_write popupFragment3= new PopupFragmentListen_and_write();
+    final PopupFragmentListen_and_choose popupFragment4= new PopupFragmentListen_and_choose();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +52,15 @@ public class Activities extends Fragment {
 
                 popupFragment2.show(getParentFragmentManager(), "myPopup");
             }});
+        choose= view.findViewById(R.id.listen_and_choose);
+        choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                popupFragment4.show(getParentFragmentManager(), "myPopup");
+            }});
+
+
 
         requireActivity().getOnBackPressedDispatcher().addCallback(
                 getViewLifecycleOwner(),

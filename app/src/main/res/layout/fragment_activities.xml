@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#62B4E0"
+    android:background="#A2D9F2"
     tools:context=".Activities"
     android:padding="16dp">
 
@@ -71,6 +71,54 @@
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/listen_and_choose"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/cairo"
+                        android:text="اسمع و اختر"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="28sp"
+                        android:paddingBottom="0dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="139dp"
+                            android:src="@drawable/k4_6fl4_220311"
+
+                            />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/cairo"
+                            android:text="علم ابنك الحروف والأرقام و نطقها "
+                            android:paddingRight="10dp"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:id="@+id/write_and_listen"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -123,7 +171,7 @@
         android:id="@+id/listen_and_write"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="50dp"
         android:clickable="true"
         android:focusable="true"
 

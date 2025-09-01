@@ -39,17 +39,20 @@ public class letters_write extends Fragment {
         requireActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+    public void releasePlayer(){
+        if (mp != null) {
+            try {
+                mp.reset();
+                mp.release();
+            } catch (Exception ignored) {}
+            mp = null;
+        }
+    }
     @Override
     public void onPause() {
         super.onPause();
         // unlock / restore when you leave the fragment
-        if (mp != null) {
-            if (mp.isPlaying()) {
-                mp.stop();
-            }
-            mp.release();
-            mp = null;
-        }
+        releasePlayer();
         requireActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     }
 
@@ -66,7 +69,7 @@ public class letters_write extends Fragment {
                 drawingView.clearCanvas();
             }
         });
-        drawingView.setStrokeWidth(70);
+        //drawingView.setStrokeWidth(70);
         dict.put("_10", "أ");
         dict.put("_11", "ب");
         dict.put("_12", "ت");
@@ -141,17 +144,7 @@ public class letters_write extends Fragment {
                     startButton.setText("بدأ");
                     drawingView.clearCanvas();
                     isDrawing[0] = false;
-                    if (mp != null) {
-                        try {
-                            if (mp.isPlaying()) {
-                                mp.stop();
-                            }
-                            mp.release();
-                            mp = null;
-                        } catch (IllegalStateException e) {
-                            e.printStackTrace();
-                        }
-                    }
+                    releasePlayer();
                 }
             }
         });

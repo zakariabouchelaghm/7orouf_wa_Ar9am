@@ -2,6 +2,7 @@ package com.example.app;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -46,7 +47,16 @@ public class Home extends Fragment {
                 bottomNavigationView.setSelectedItemId(R.id.menu);
             }
         });
+        requireActivity().getOnBackPressedDispatcher().addCallback(
+                getViewLifecycleOwner(),
+                new OnBackPressedCallback(true) {
+                    @Override
+                    public void handleOnBackPressed() {
+                        requireActivity().finish();
 
+                    }
+                }
+        );
         return view;
         }
 

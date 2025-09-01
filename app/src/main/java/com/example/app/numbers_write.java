@@ -58,7 +58,7 @@ public class numbers_write extends Fragment {
                 drawingView.clearCanvas();
             }
         });
-        drawingView.setStrokeWidth(90);
+        //drawingView.setStrokeWidth(70);
 
 
         Button sendButton = view.findViewById(R.id.send);
@@ -108,11 +108,7 @@ public class numbers_write extends Fragment {
                     drawingView.clearCanvas();
                     startButton.setText("بدأ");
                     isDrawing[0] = false;
-                    if (mp != null) {
-                        mp.stop();
-                        mp.release();
-                        mp = null;
-                    }
+                    releasePlayer();
                 }
             }
         });
