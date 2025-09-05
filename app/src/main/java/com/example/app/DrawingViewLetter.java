@@ -10,6 +10,7 @@ import android.graphics.Path;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DrawingViewLetter extends View {
+
     public static class Stroke{
         Path path;
         Paint paint;
@@ -198,7 +200,7 @@ public class DrawingViewLetter extends View {
                     .addFormDataPart("file", "drawing.png", RequestBody.create(MediaType.parse("image/png"), pngBytes))
                     .build();
             Request request = new Request.Builder()
-                    .url("https://app-deploy-letter.onrender.com/predict")
+                    .url("https://app-deploy-letter-vit.onrender.com/predict")
                     .post(requestBody)
                     .build();
 
@@ -213,9 +215,13 @@ public class DrawingViewLetter extends View {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     try {
+                        if (!response.isSuccessful() || response.body() == null) {
+                            throw new IOException("Unexpected code " + response);
+                        }
                         String jsonString = response.body().string();
+                        Log.d("API_RESPONSE", "Raw: " + jsonString);
                         response.close();
-                        JSONObject json = new JSONObject(jsonString);
+                        JSONObject json = new JSONObject(jsonString.trim());
                         int predicted = json.getInt("predicted_class");
                         int mappedPredicted = predicted + 10;
 
@@ -226,6 +232,8 @@ public class DrawingViewLetter extends View {
                         new Handler(Looper.getMainLooper()).post(() ->
                                 Toast.makeText(getContext(), "Invalid response", Toast.LENGTH_LONG).show()
                         );
+                    }finally{
+                        response.close();
                     }
                 }
             });
