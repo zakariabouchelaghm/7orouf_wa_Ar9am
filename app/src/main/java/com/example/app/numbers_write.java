@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,8 +70,10 @@ public class numbers_write extends Fragment {
                 if (!isDrawing[0]) return;
                 drawingView.sendDrawingToServer(predicted -> {
                     // Here you have the predicted integer
+                    Toast.makeText(getContext(),String.valueOf(predicted), Toast.LENGTH_SHORT).show();
+                    Log.d("PredictionResult", "Predicted value: " + predicted);
 
-                    String resName = "_" + predicted;
+                    String resName = "__" + predicted;
                     int resId = getResources().getIdentifier(resName, "raw", requireContext().getPackageName());
                     if (resId != 0) { // make sure resource exists
                         mp = MediaPlayer.create(requireContext(), resId);

@@ -200,7 +200,7 @@ public class DrawingViewLetter extends View {
                     .addFormDataPart("file", "drawing.png", RequestBody.create(MediaType.parse("image/png"), pngBytes))
                     .build();
             Request request = new Request.Builder()
-                    .url("https://app-deploy-letter-vit.onrender.com/predict")
+                    .url("https://app-deploy-letter.onrender.com/predict")
                     .post(requestBody)
                     .build();
 
@@ -219,7 +219,7 @@ public class DrawingViewLetter extends View {
                             throw new IOException("Unexpected code " + response);
                         }
                         String jsonString = response.body().string();
-                        Log.d("API_RESPONSE", "Raw: " + jsonString);
+                        //Log.d("API_RESPONSE", "Raw: " + jsonString);
                         response.close();
                         JSONObject json = new JSONObject(jsonString.trim());
                         int predicted = json.getInt("predicted_class");

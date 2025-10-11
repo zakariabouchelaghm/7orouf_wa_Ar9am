@@ -76,15 +76,15 @@ public class Listen_choose_numbers extends Fragment {
 
     private void loadQuestions() {
         questions = new ArrayList<>();
-        questions.add(new Question(R.raw._5, new int[]{R.drawable.one, R.drawable.nine, R.drawable.five}, R.drawable.five));
-        questions.add(new Question(R.raw._1, new int[]{R.drawable.three, R.drawable.one, R.drawable.two}, R.drawable.one));
-        questions.add(new Question(R.raw._7, new int[]{R.drawable.seven, R.drawable.four, R.drawable.eight}, R.drawable.seven));
-        questions.add(new Question(R.raw._9, new int[]{R.drawable.one, R.drawable.nine, R.drawable.four}, R.drawable.nine));
-        questions.add(new Question(R.raw._3, new int[]{R.drawable.seven, R.drawable.four, R.drawable.three}, R.drawable.three));
-        questions.add(new Question(R.raw._0, new int[]{R.drawable.one, R.drawable.zero, R.drawable.nine}, R.drawable.zero));
-        questions.add(new Question(R.raw._2, new int[]{R.drawable.two, R.drawable.five, R.drawable.three}, R.drawable.two));
-        questions.add(new Question(R.raw._6, new int[]{R.drawable.three, R.drawable.seven, R.drawable.six}, R.drawable.six));
-        questions.add(new Question(R.raw._8, new int[]{R.drawable.eight, R.drawable.one, R.drawable.two}, R.drawable.eight));
+        questions.add(new Question(R.raw.__5, new int[]{R.drawable.one, R.drawable.nine, R.drawable.five}, R.drawable.five));
+        questions.add(new Question(R.raw.__1, new int[]{R.drawable.three, R.drawable.one, R.drawable.two}, R.drawable.one));
+        questions.add(new Question(R.raw.__7, new int[]{R.drawable.seven, R.drawable.four, R.drawable.eight}, R.drawable.seven));
+        questions.add(new Question(R.raw.__9, new int[]{R.drawable.one, R.drawable.nine, R.drawable.four}, R.drawable.nine));
+        questions.add(new Question(R.raw.__3, new int[]{R.drawable.seven, R.drawable.four, R.drawable.three}, R.drawable.three));
+        questions.add(new Question(R.raw.__0, new int[]{R.drawable.one, R.drawable.zero, R.drawable.nine}, R.drawable.zero));
+        questions.add(new Question(R.raw.__2, new int[]{R.drawable.two, R.drawable.five, R.drawable.three}, R.drawable.two));
+        questions.add(new Question(R.raw.__6, new int[]{R.drawable.three, R.drawable.seven, R.drawable.six}, R.drawable.six));
+        questions.add(new Question(R.raw.__8, new int[]{R.drawable.eight, R.drawable.one, R.drawable.two}, R.drawable.eight));
 
 
         Collections.shuffle(questions);

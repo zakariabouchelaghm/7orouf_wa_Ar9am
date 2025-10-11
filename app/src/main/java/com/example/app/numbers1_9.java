@@ -34,7 +34,7 @@ public class numbers1_9 extends Fragment {
             mp.release();
             mp = null;
         }
-        String resName = "_" + num;
+        String resName = "__" + num;
         int resId = getResources().getIdentifier(resName, "raw", requireContext().getPackageName());
         if (resId != 0) { // make sure resource exists
             mp = MediaPlayer.create(requireContext(), resId);

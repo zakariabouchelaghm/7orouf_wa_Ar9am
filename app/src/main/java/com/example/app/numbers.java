@@ -124,8 +124,8 @@ public class numbers extends Fragment {
     }
     private int generateNewNumber() {
 
-        currentNumber = (int)(Math.random() * 10);// 0-9
-        String resName = "_" + currentNumber;
+        currentNumber = (int)(Math.random() * 100);// 0-9
+        String resName = "__" + currentNumber;
         int resId = getResources().getIdentifier(resName, "raw", requireContext().getPackageName());
         if (resId != 0) { // make sure resource exists
             mp = MediaPlayer.create(requireContext(), resId);
@@ -146,7 +146,7 @@ public class numbers extends Fragment {
     private void generateNewNumber_inc() {
 
 
-        String resName = "_" + currentNumber;
+        String resName = "__" + currentNumber;
         int resId = getResources().getIdentifier(resName, "raw", requireContext().getPackageName());
         if (resId != 0) { // make sure resource exists
             mp = MediaPlayer.create(requireContext(), resId);

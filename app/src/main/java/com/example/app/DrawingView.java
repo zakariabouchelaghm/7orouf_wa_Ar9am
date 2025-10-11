@@ -10,6 +10,7 @@ import android.graphics.Path;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -164,7 +165,7 @@ public class DrawingView extends View {
             Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(bitmap);
             draw(canvas);
-            Bitmap resized = Bitmap.createScaledBitmap(bitmap, 32, 32, true);
+            Bitmap resized = Bitmap.createScaledBitmap(bitmap, 600, 300, true);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             resized.compress(Bitmap.CompressFormat.PNG, 100, stream);
             byte[] pngBytes = stream.toByteArray();
@@ -176,7 +177,7 @@ public class DrawingView extends View {
                     .addFormDataPart("file", "drawing.png", RequestBody.create(MediaType.parse("image/png"), pngBytes))
                     .build();
             Request request = new Request.Builder()
-                    .url("https://app-deploy-1.onrender.com/predict")
+                    .url("https://app-deploy-100.onrender.com/predict")
                     .post(requestBody)
                     .build();
 
@@ -192,10 +193,11 @@ public class DrawingView extends View {
                 public void onResponse(Call call, Response response) throws IOException {
                     try {
                         String jsonString = response.body().string();
+                        Log.d("ServerResponse", "Raw response: " + jsonString);
                         response.close();
                         JSONObject json = new JSONObject(jsonString);
                         int predicted = json.getInt("predicted_class");
-
+                        Log.d("PredictionResult", "Predicted value: " + predicted);
                         // Return the int via Consumer on main thread
                         new Handler(Looper.getMainLooper()).post(() -> onResult.accept(predicted));
 
