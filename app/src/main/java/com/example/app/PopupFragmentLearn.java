@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 public class PopupFragmentLearn extends DialogFragment {
 
 
-    CardView numbers,letters;
+    CardView numbers,letters,numbers1;
     @Override
     public void onResume() {
         super.onResume();
@@ -36,19 +36,29 @@ public class PopupFragmentLearn extends DialogFragment {
         View view=inflater.inflate(R.layout.fragment_popup, container, false);
         setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Material_Light_Dialog_NoActionBar);
         numbers= view.findViewById(R.id.numbers);
+        numbers1=view.findViewById(R.id.numbers1);
         letters= view.findViewById(R.id.letters);
-        Fragment fragment_numbers = new numbers();
+
 
 
         numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment fragment= new numbers1_9();
+
                 requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame,fragment).addToBackStack(null).commit();
                 dismiss();
             }
         });
-        Fragment fragment_letters = new letters();
+
+        numbers1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment= new tens();
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame,fragment).addToBackStack(null).commit();
+                dismiss();
+            }
+        });
         letters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

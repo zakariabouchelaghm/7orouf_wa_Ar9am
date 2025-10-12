@@ -33,7 +33,7 @@ public class PopupFragmentListen_and_choose extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view=inflater.inflate(R.layout.fragment_popup, container, false);
+        View view=inflater.inflate(R.layout.fragment_popup_listen_and_write, container, false);
         setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Material_Light_Dialog_NoActionBar);
         numbers= view.findViewById(R.id.numbers);
         letters= view.findViewById(R.id.letters);

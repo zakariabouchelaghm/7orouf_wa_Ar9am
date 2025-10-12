@@ -3,17 +3,16 @@ package com.example.app;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 
-public class numbers1_9 extends Fragment {
+public class tens extends Fragment {
+
     MediaPlayer mp;
     @Override
     public void onPause() {
@@ -52,18 +51,19 @@ public class numbers1_9 extends Fragment {
             Toast.makeText(getContext(), "Resource not found: " + resName, Toast.LENGTH_SHORT).show();
         }
     }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_numbers1_9, container, false);
 
-        int[] ids = {R.id.zero,R.id.one, R.id.two, R.id.three, R.id.four,
-                R.id.five, R.id.six, R.id.seven, R.id.eight, R.id.nine,R.id.ten,R.id.eleven,
-        R.id.twelve,R.id.thirteen,R.id.fourteen,R.id.fifteen,R.id.sixteen,R.id.seventeen,
-        R.id.eightteen,R.id.nineteen,R.id.twenty};
+        View view= inflater.inflate(R.layout.fragment_tens, container, false);
+        int[] ids = {R.id.ten,R.id.twenty,R.id.thirty,
+                R.id.fourty,R.id.fifty,R.id.sixty,R.id.seventy,R.id.eighty,R.id.ninety,
+                R.id.oneh};
 
         for (int i = 0; i <ids.length; i++) {
-            final int index = i ;  // 1..9
+            final int index = (i+1)*10;
             View v = view.findViewById(ids[i]);
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -72,10 +72,6 @@ public class numbers1_9 extends Fragment {
                 }
             });
         }
-
-
-
         return view;
     }
-
 }
