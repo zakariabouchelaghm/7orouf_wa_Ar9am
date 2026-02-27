@@ -1,55 +1,44 @@
-#🎓 7orouf w Ar9am
+# ✋ **Hand Count AI**
 
-7orouf w Ar9am is an interactive AI-powered desktop application designed to help children learn numbers and letters in a fun and engaging way.
+**Hand Count AI** is an interactive, AI-powered desktop application designed to teach children how to count from **1 to 10** using hand gestures.  
 
-The app combines education and computer vision to create an enjoyable learning experience for kids.
+The application displays a number, and the child must show the corresponding number of fingers to the camera. It offers an engaging experience with Arabic language support, fun sounds, and 7 rounds of exercises.
 
-##✨ Features
+---
 
-🔢 Learn numbers and letters
+## 🌟 **Features**
 
-✋ Real-time hand drawing recognition
+- **Real-Time Hand Detection** — Utilizes MediaPipe for accurate hand tracking.  
+- **Pure NumPy Inference** — Uses a custom Keras (`.h5`) model converted for pure NumPy inference without needing bulky frameworks like TensorFlow.  
+- **Child-Friendly Interface** — Modern, dark-themed UI built with CustomTkinter.  
+- **Interactive Feedback** — Visual indicators and sound effects celebrate successful answers.  
+- **Arabic Support** — Fully translated into Arabic, including numbers, instructions, and feedback messages.  
 
-🤖 AI-powered validation
+---
 
-🎨 Kid-friendly and colorful interface
+## 🛠️ **Prerequisites & Dependencies**
 
-##🧠 How It Works
+All required dependencies for this application are listed in the `requirements.txt` file. They include:
 
-The application asks the child to draw a number or a letter.
+- `customtkinter` — UI Framework  
+- `opencv-python` — Camera feed  
+- `numpy` — Model inference  
+- `mediapipe` — Hand landmark detection  
+- `Pillow` — Image processing for UI  
+- `pygame` — Sound effects  
+- `h5py` — Parsing `.h5` model weights  
 
-The built-in AI model detects the hand.
+---
 
-The AI analyzes the drawn character.
+## 🚀 **Getting Started**
 
-The app gives instant feedback:
+### **1. Clone the repository**
 
-✅ Correct!
+Clone the project if you haven't already.
 
-❌ Try again!
+### **2. Install the dependencies**
 
-This makes learning interactive, playful, and effective.
+Run the following command in your terminal:
 
-##🎯 هدف التطبيق
-
-يساعد التطبيق الأطفال على:
-
-تعلم الأرقام و الحروف بطريقة ممتعة
-
-التفاعل باستخدام أيديهم
-
-تطوير مهارات العدّ والتركيز
-
-التعرف على أساسيات الذكاء الاصطناعي بطريقة مبسطة
-
-##🛠️ Technologies Used
-
-Computer Vision
-
-AI / Machine Learning
-
-Android Developement
-
-##👨‍💻 Developer
-
-Created with ❤️ to make learning smarter and more fun for children.
+```bash
+pip install -r requirements.txt
