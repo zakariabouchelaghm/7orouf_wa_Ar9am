@@ -4,7 +4,7 @@
 
 The app combines education and computer vision to create an enjoyable learning experience for kids.
 
----
+
 
 ## ✨ Features
 
@@ -13,7 +13,7 @@ The app combines education and computer vision to create an enjoyable learning e
 - 🤖 AI-powered validation  
 - 🎨 Kid-friendly and colorful interface  
 
----
+
 
 ## 🧠 How It Works
 
@@ -26,7 +26,7 @@ The app combines education and computer vision to create an enjoyable learning e
 
 This makes learning interactive, playful, and effective.
 
----
+
 
 ## 🎯 هدف التطبيق
 
@@ -37,7 +37,7 @@ This makes learning interactive, playful, and effective.
 - تطوير مهارات العدّ والتركيز  
 - التعرف على أساسيات الذكاء الاصطناعي بطريقة مبسطة  
 
----
+
 
 ## 🛠️ Technologies Used
 
@@ -45,7 +45,7 @@ This makes learning interactive, playful, and effective.
 - AI / Machine Learning  
 - Android Development  
 
----
+
 
 ## 👨‍💻 Developer
 
