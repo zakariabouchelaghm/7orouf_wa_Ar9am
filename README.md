@@ -6,13 +6,13 @@ The app combines education and computer vision to create an enjoyable learning e
 
 ##✨ Features
 
-🔢 **Learn numbers and letters**
+🔢 Learn numbers and letters
 
-✋ **Real-time hand drawing recognition**
+✋ Real-time hand drawing recognition
 
-🤖 **AI-powered validation**
+🤖 AI-powered validation
 
-🎨 **Kid-friendly and colorful interface**
+🎨 Kid-friendly and colorful interface
 
 ##🧠 How It Works
 
@@ -49,7 +49,6 @@ Computer Vision
 AI / Machine Learning
 
 Android Developement
-
 
 ##👨‍💻 Developer
 
